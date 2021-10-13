@@ -20,8 +20,16 @@
             "tsConfig": "apps/ng-one-hundred/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "apps/ng-one-hundred/src/favicon.ico",
-              "apps/ng-one-hundred/src/assets"
+              {
+                "glob": "favicon.ico",
+                "input": "libs/shared/assets/src",
+                "output": "./"
+              },
+              {
+                "glob": "**/*",
+                "input": "libs/shared/assets/src/assets",
+                "output": "assets"
+              }
             ],
             "styles": [
               "apps/ng-one-hundred/src/styles.scss"
@@ -126,6 +134,38 @@
           "options": {
             "lintFilePatterns": [
               "apps/ng-one-hundred-e2e/**/*.{js,ts}"
+            ]
+          }
+        }
+      }
+    },
+    "shared-assets": {
+      "root": "libs/shared/assets",
+      "sourceRoot": "libs/shared/assets/src",
+      "projectType": "library",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/workspace:tsc",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "outputPath": "dist/libs/shared/assets",
+            "main": "libs/shared/assets/src/index.ts",
+            "tsConfig": "libs/shared/assets/tsconfig.lib.json",
+            "assets": [
+              "libs/shared/assets/*.md"
+            ]
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": [
+            "{options.outputFile}"
+          ],
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/assets/**/*.ts"
             ]
           }
         }

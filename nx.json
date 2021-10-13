@@ -34,6 +34,9 @@
       "tags": [],
       "implicitDependencies": ["ng-one-hundred"]
     },
+    "shared-assets": {
+      "tags": ["scope:shared", "type:assets"]
+    },
     "shared-environments": {
       "tags": ["scope:shared", "type:environments"]
     }
