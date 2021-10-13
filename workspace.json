@@ -9,7 +9,9 @@
       "targets": {
         "build": {
           "executor": "@angular-devkit/build-angular:browser",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/apps/ng-one-hundred",
             "index": "apps/ng-one-hundred/src/index.html",
@@ -21,7 +23,9 @@
               "apps/ng-one-hundred/src/favicon.ico",
               "apps/ng-one-hundred/src/assets"
             ],
-            "styles": ["apps/ng-one-hundred/src/styles.scss"],
+            "styles": [
+              "apps/ng-one-hundred/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -40,8 +44,8 @@
               ],
               "fileReplacements": [
                 {
-                  "replace": "apps/ng-one-hundred/src/environments/environment.ts",
-                  "with": "apps/ng-one-hundred/src/environments/environment.prod.ts"
+                  "replace": "libs/shared/environments/src/libs/environment.ts",
+                  "with": "libs/shared/environments/src/libs/environment.prod.ts"
                 }
               ],
               "outputHashing": "all"
@@ -86,7 +90,9 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/ng-one-hundred"],
+          "outputs": [
+            "coverage/apps/ng-one-hundred"
+          ],
           "options": {
             "jestConfig": "apps/ng-one-hundred/jest.config.js",
             "passWithNoTests": true
@@ -114,9 +120,45 @@
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "outputs": ["{options.outputFile}"],
+          "outputs": [
+            "{options.outputFile}"
+          ],
           "options": {
-            "lintFilePatterns": ["apps/ng-one-hundred-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/ng-one-hundred-e2e/**/*.{js,ts}"
+            ]
+          }
+        }
+      }
+    },
+    "shared-environments": {
+      "root": "libs/shared/environments",
+      "sourceRoot": "libs/shared/environments/src",
+      "projectType": "library",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/workspace:tsc",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "outputPath": "dist/libs/shared/environments",
+            "main": "libs/shared/environments/src/index.ts",
+            "tsConfig": "libs/shared/environments/tsconfig.lib.json",
+            "assets": [
+              "libs/shared/environments/*.md"
+            ]
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": [
+            "{options.outputFile}"
+          ],
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/environments/**/*.ts"
+            ]
           }
         }
       }

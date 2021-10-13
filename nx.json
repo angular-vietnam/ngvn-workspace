@@ -33,6 +33,9 @@
     "ng-one-hundred-e2e": {
       "tags": [],
       "implicitDependencies": ["ng-one-hundred"]
+    },
+    "shared-environments": {
+      "tags": ["scope:shared", "type:environments"]
     }
   }
 }
