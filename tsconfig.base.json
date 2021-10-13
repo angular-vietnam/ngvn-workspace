@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@ngvn/shared/assets": ["libs/shared/assets/src/index.ts"],
-      "@ngvn/shared/environments": ["libs/shared/environments/src/index.ts"]
+      "@ngvn/shared/environments": ["libs/shared/environments/src/index.ts"],
+      "@ngvn/shared/styles": ["libs/shared/styles/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

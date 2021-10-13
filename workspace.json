@@ -32,7 +32,7 @@
               }
             ],
             "styles": [
-              "apps/ng-one-hundred/src/styles.scss"
+              "libs/shared/styles/src/index.scss"
             ],
             "scripts": []
           },
@@ -198,6 +198,38 @@
           "options": {
             "lintFilePatterns": [
               "libs/shared/environments/**/*.ts"
+            ]
+          }
+        }
+      }
+    },
+    "shared-styles": {
+      "root": "libs/shared/styles",
+      "sourceRoot": "libs/shared/styles/src",
+      "projectType": "library",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/workspace:tsc",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "outputPath": "dist/libs/shared/styles",
+            "main": "libs/shared/styles/src/index.ts",
+            "tsConfig": "libs/shared/styles/tsconfig.lib.json",
+            "assets": [
+              "libs/shared/styles/*.md"
+            ]
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": [
+            "{options.outputFile}"
+          ],
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/styles/**/*.ts"
             ]
           }
         }
