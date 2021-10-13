@@ -15,6 +15,15 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@ngvn/ng-one-hundred/feature-day": [
+        "libs/ng-one-hundred/feature-day/src/index.ts"
+      ],
+      "@ngvn/ng-one-hundred/feature-home": [
+        "libs/ng-one-hundred/feature-home/src/index.ts"
+      ],
+      "@ngvn/ng-one-hundred/feature-shell": [
+        "libs/ng-one-hundred/feature-shell/src/index.ts"
+      ],
       "@ngvn/shared/assets": ["libs/shared/assets/src/index.ts"],
       "@ngvn/shared/environments": ["libs/shared/environments/src/index.ts"],
       "@ngvn/shared/styles": ["libs/shared/styles/src/index.ts"]
