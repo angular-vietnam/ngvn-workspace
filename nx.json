@@ -1,7 +1,7 @@
 {
   "npmScope": "ngvn",
   "affected": {
-    "defaultBase": "master"
+    "defaultBase": "main"
   },
   "implicitDependencies": {
     "package.json": {
@@ -14,7 +14,12 @@
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e"
+        ]
       }
     }
   },
@@ -28,20 +33,35 @@
   },
   "projects": {
     "ng-one-hundred": {
-      "tags": []
+      "tags": [],
+      "implicitDependencies": [
+        "shared-assets",
+        "shared-styles"
+      ]
     },
     "ng-one-hundred-e2e": {
       "tags": [],
-      "implicitDependencies": ["ng-one-hundred"]
+      "implicitDependencies": [
+        "ng-one-hundred"
+      ]
     },
     "shared-assets": {
-      "tags": ["scope:shared", "type:assets"]
+      "tags": [
+        "scope:shared",
+        "type:assets"
+      ]
     },
     "shared-environments": {
-      "tags": ["scope:shared", "type:environments"]
+      "tags": [
+        "scope:shared",
+        "type:environments"
+      ]
     },
     "shared-styles": {
-      "tags": ["scope:shared", "type:styles"]
+      "tags": [
+        "scope:shared",
+        "type:styles"
+      ]
     }
   }
 }
