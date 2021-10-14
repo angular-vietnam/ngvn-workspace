@@ -44,6 +44,12 @@
     "ng-one-hundred-feature-shell": {
       "tags": ["scope:ng-one-hundred", "type:feature"]
     },
+    "ng-one-hundred-ui-day-list": {
+      "tags": ["scope:ng-one-hundred", "type:ui"]
+    },
+    "ng-one-hundred-ui-home-banner": {
+      "tags": ["scope:ng-one-hundred", "type:ui"]
+    },
     "shared-assets": {
       "tags": ["scope:shared", "type:assets"]
     },

@@ -9,9 +9,7 @@
       "targets": {
         "build": {
           "executor": "@angular-devkit/build-angular:browser",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/ng-one-hundred",
             "index": "apps/ng-one-hundred/src/index.html",
@@ -31,9 +29,7 @@
                 "output": "assets"
               }
             ],
-            "styles": [
-              "libs/shared/styles/src/index.scss"
-            ],
+            "styles": ["libs/shared/styles/src/index.scss"],
             "scripts": []
           },
           "configurations": {
@@ -98,9 +94,7 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/ng-one-hundred"
-          ],
+          "outputs": ["coverage/apps/ng-one-hundred"],
           "options": {
             "jestConfig": "apps/ng-one-hundred/jest.config.js",
             "passWithNoTests": true
@@ -139,13 +133,9 @@
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": [
-              "apps/ng-one-hundred-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/ng-one-hundred-e2e/**/*.{js,ts}"]
           }
         }
       }
@@ -158,9 +148,7 @@
       "targets": {
         "build": {
           "executor": "@nrwl/angular:ng-packagr-lite",
-          "outputs": [
-            "dist/libs/ng-one-hundred/feature-day"
-          ],
+          "outputs": ["dist/libs/ng-one-hundred/feature-day"],
           "options": {
             "project": "libs/ng-one-hundred/feature-day/ng-package.json"
           },
@@ -176,9 +164,7 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/ng-one-hundred/feature-day"
-          ],
+          "outputs": ["coverage/libs/ng-one-hundred/feature-day"],
           "options": {
             "jestConfig": "libs/ng-one-hundred/feature-day/jest.config.js",
             "passWithNoTests": true
@@ -203,9 +189,7 @@
       "targets": {
         "build": {
           "executor": "@nrwl/angular:ng-packagr-lite",
-          "outputs": [
-            "dist/libs/ng-one-hundred/feature-home"
-          ],
+          "outputs": ["dist/libs/ng-one-hundred/feature-home"],
           "options": {
             "project": "libs/ng-one-hundred/feature-home/ng-package.json"
           },
@@ -221,9 +205,7 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/ng-one-hundred/feature-home"
-          ],
+          "outputs": ["coverage/libs/ng-one-hundred/feature-home"],
           "options": {
             "jestConfig": "libs/ng-one-hundred/feature-home/jest.config.js",
             "passWithNoTests": true
@@ -248,9 +230,7 @@
       "targets": {
         "build": {
           "executor": "@nrwl/angular:ng-packagr-lite",
-          "outputs": [
-            "dist/libs/ng-one-hundred/feature-shell"
-          ],
+          "outputs": ["dist/libs/ng-one-hundred/feature-shell"],
           "options": {
             "project": "libs/ng-one-hundred/feature-shell/ng-package.json"
           },
@@ -266,9 +246,7 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/ng-one-hundred/feature-shell"
-          ],
+          "outputs": ["coverage/libs/ng-one-hundred/feature-shell"],
           "options": {
             "jestConfig": "libs/ng-one-hundred/feature-shell/jest.config.js",
             "passWithNoTests": true
@@ -285,6 +263,88 @@
         }
       }
     },
+    "ng-one-hundred-ui-day-list": {
+      "projectType": "library",
+      "root": "libs/ng-one-hundred/ui-day-list",
+      "sourceRoot": "libs/ng-one-hundred/ui-day-list/src",
+      "prefix": "noh",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/angular:ng-packagr-lite",
+          "outputs": ["dist/libs/ng-one-hundred/ui-day-list"],
+          "options": {
+            "project": "libs/ng-one-hundred/ui-day-list/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/ng-one-hundred/ui-day-list/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/ng-one-hundred/ui-day-list/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ng-one-hundred/ui-day-list"],
+          "options": {
+            "jestConfig": "libs/ng-one-hundred/ui-day-list/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ng-one-hundred/ui-day-list/src/**/*.ts",
+              "libs/ng-one-hundred/ui-day-list/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "ng-one-hundred-ui-home-banner": {
+      "projectType": "library",
+      "root": "libs/ng-one-hundred/ui-home-banner",
+      "sourceRoot": "libs/ng-one-hundred/ui-home-banner/src",
+      "prefix": "noh",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/angular:ng-packagr-lite",
+          "outputs": ["dist/libs/ng-one-hundred/ui-home-banner"],
+          "options": {
+            "project": "libs/ng-one-hundred/ui-home-banner/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/ng-one-hundred/ui-home-banner/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/ng-one-hundred/ui-home-banner/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ng-one-hundred/ui-home-banner"],
+          "options": {
+            "jestConfig": "libs/ng-one-hundred/ui-home-banner/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ng-one-hundred/ui-home-banner/src/**/*.ts",
+              "libs/ng-one-hundred/ui-home-banner/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "shared-assets": {
       "root": "libs/shared/assets",
       "sourceRoot": "libs/shared/assets/src",
@@ -292,27 +352,19 @@
       "targets": {
         "build": {
           "executor": "@nrwl/workspace:tsc",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/libs/shared/assets",
             "main": "libs/shared/assets/src/index.ts",
             "tsConfig": "libs/shared/assets/tsconfig.lib.json",
-            "assets": [
-              "libs/shared/assets/*.md"
-            ]
+            "assets": ["libs/shared/assets/*.md"]
           }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": [
-              "libs/shared/assets/**/*.ts"
-            ]
+            "lintFilePatterns": ["libs/shared/assets/**/*.ts"]
           }
         }
       }
@@ -324,27 +376,19 @@
       "targets": {
         "build": {
           "executor": "@nrwl/workspace:tsc",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/libs/shared/environments",
             "main": "libs/shared/environments/src/index.ts",
             "tsConfig": "libs/shared/environments/tsconfig.lib.json",
-            "assets": [
-              "libs/shared/environments/*.md"
-            ]
+            "assets": ["libs/shared/environments/*.md"]
           }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": [
-              "libs/shared/environments/**/*.ts"
-            ]
+            "lintFilePatterns": ["libs/shared/environments/**/*.ts"]
           }
         }
       }
@@ -356,27 +400,19 @@
       "targets": {
         "build": {
           "executor": "@nrwl/workspace:tsc",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/libs/shared/styles",
             "main": "libs/shared/styles/src/index.ts",
             "tsConfig": "libs/shared/styles/tsconfig.lib.json",
-            "assets": [
-              "libs/shared/styles/*.md"
-            ]
+            "assets": ["libs/shared/styles/*.md"]
           }
         },
         "lint": {
           "executor": "@nrwl/linter:eslint",
-          "outputs": [
-            "{options.outputFile}"
-          ],
+          "outputs": ["{options.outputFile}"],
           "options": {
-            "lintFilePatterns": [
-              "libs/shared/styles/**/*.ts"
-            ]
+            "lintFilePatterns": ["libs/shared/styles/**/*.ts"]
           }
         }
       }

@@ -24,6 +24,12 @@
       "@ngvn/ng-one-hundred/feature-shell": [
         "libs/ng-one-hundred/feature-shell/src/index.ts"
       ],
+      "@ngvn/ng-one-hundred/ui-day-list": [
+        "libs/ng-one-hundred/ui-day-list/src/index.ts"
+      ],
+      "@ngvn/ng-one-hundred/ui-home-banner": [
+        "libs/ng-one-hundred/ui-home-banner/src/index.ts"
+      ],
       "@ngvn/shared/assets": ["libs/shared/assets/src/index.ts"],
       "@ngvn/shared/environments": ["libs/shared/environments/src/index.ts"],
       "@ngvn/shared/styles": ["libs/shared/styles/src/index.ts"]
