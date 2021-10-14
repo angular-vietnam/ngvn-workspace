@@ -113,7 +113,8 @@
               "dotenv scully",
               "mv 'apps/ng-one-hundred/src/assets/scully-routes.json' 'libs/shared/assets/src/assets'",
               "rm -rf 'apps/ng-one-hundred/src/assets'"
-            ]
+            ],
+            "parallel": false
           }
         }
       }
