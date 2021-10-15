@@ -14,6 +14,9 @@ module.exports = {
       transitionProperty: {
         'background-image': 'background-image',
       },
+      minHeight: {
+        'day-card-description': '4rem',
+      },
     },
   },
   variants: {
