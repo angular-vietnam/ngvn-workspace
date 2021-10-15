@@ -31,6 +31,9 @@
       "tags": [],
       "implicitDependencies": ["shared-assets", "shared-styles"]
     },
+    "ng-one-hundred-data-access-day": {
+      "tags": ["scope:ng-one-hundred", "type:data-access"]
+    },
     "ng-one-hundred-e2e": {
       "tags": [],
       "implicitDependencies": ["ng-one-hundred"]
@@ -49,6 +52,9 @@
     },
     "ng-one-hundred-ui-home-banner": {
       "tags": ["scope:ng-one-hundred", "type:ui"]
+    },
+    "ng-one-hundred-util-enhanced-component-store": {
+      "tags": ["scope:ng-one-hundred:type:util"]
     },
     "shared-assets": {
       "tags": ["scope:shared", "type:assets"]

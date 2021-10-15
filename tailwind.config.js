@@ -10,7 +10,11 @@ module.exports = {
     fontFamily: {
       sans: ['Raleway', ...fontFamily.sans],
     },
-    extend: {},
+    extend: {
+      transitionProperty: {
+        'background-image': 'background-image',
+      },
+    },
   },
   variants: {
     extend: {},

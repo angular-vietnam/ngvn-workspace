@@ -15,6 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@ngvn/ng-one-hundred/data-access-day": [
+        "libs/ng-one-hundred/data-access-day/src/index.ts"
+      ],
       "@ngvn/ng-one-hundred/feature-day": [
         "libs/ng-one-hundred/feature-day/src/index.ts"
       ],
@@ -29,6 +32,9 @@
       ],
       "@ngvn/ng-one-hundred/ui-home-banner": [
         "libs/ng-one-hundred/ui-home-banner/src/index.ts"
+      ],
+      "@ngvn/ng-one-hundred/util-enhanced-component-store": [
+        "libs/ng-one-hundred/util-enhanced-component-store/src/index.ts"
       ],
       "@ngvn/shared/assets": ["libs/shared/assets/src/index.ts"],
       "@ngvn/shared/environments": ["libs/shared/environments/src/index.ts"],
