@@ -1718,37 +1718,37 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@notion-stuff/blocks-html-parser@2.3.0":
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/@notion-stuff/blocks-html-parser/-/blocks-html-parser-2.3.0.tgz#c629b567c9f84ca7ffb7d1491645fc1c9dbf9544"
-  integrity sha512-6GEkUm/lsGM46anaRltEh+xWYgL0LBKk9lTg9pAIZtKLmbMJ14rjMNwSwQKi9Ho3WeUlTjPu4eafMB3OO2+MPQ==
+"@notion-stuff/blocks-html-parser@2.3.2":
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/@notion-stuff/blocks-html-parser/-/blocks-html-parser-2.3.2.tgz#ef50422609a9fcde6ba385c10a9eb41bc58372fb"
+  integrity sha512-C4DT4Q3o5PrMSN2sGMeeGHL+LhUVHzkAcBPLs+TS8w2CHNiNXZgRNFD4ejvwCSOrIy4JLLXfpSb1/kCo2qbLCQ==
   dependencies:
-    "@notion-stuff/blocks-markdown-parser" "2.3.0"
-    "@notion-stuff/v4-types" "2.3.0"
+    "@notion-stuff/blocks-markdown-parser" "2.3.2"
+    "@notion-stuff/v4-types" "2.3.2"
     "@notionhq/client" "~0.4.0"
 
-"@notion-stuff/blocks-markdown-parser@2.3.0":
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/@notion-stuff/blocks-markdown-parser/-/blocks-markdown-parser-2.3.0.tgz#fbcc538a5e944e49122c2db4c3245583c24ebdfa"
-  integrity sha512-XJBgSq1t5VSKTuNe0Jpyv+gX6OyHBjoL4xTDQc5RXOv4Gl/lvTEjbQgrDJmC8rF+U3npH65Q9Wwz32EjX5bXmQ==
+"@notion-stuff/blocks-markdown-parser@2.3.2":
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/@notion-stuff/blocks-markdown-parser/-/blocks-markdown-parser-2.3.2.tgz#7fced47543983cd47940e7efa92adb659a10707b"
+  integrity sha512-+4YAwU5Nlk/JbHmI0zS8SXfrTmHpY/85BuzE/nwCg8sI8SCE+eNCuIkA2L6jNSm/zN4FylndWIV3vEfyCwzr9g==
   dependencies:
-    "@notion-stuff/v4-types" "2.3.0"
+    "@notion-stuff/v4-types" "2.3.2"
     "@notionhq/client" "~0.4.0"
 
-"@notion-stuff/scully-plugin-notion@2.3.0":
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/@notion-stuff/scully-plugin-notion/-/scully-plugin-notion-2.3.0.tgz#955e3350402175c94f5acb1e37751020d354dbd7"
-  integrity sha512-sRniKgU3MwB2wJddrqXDOaBGLnFkkBcXSPY+ynwPp3zyhZ2c3tWyrG0wkLtiWK9dfGzRFbOD+fw678phsQLhLw==
+"@notion-stuff/scully-plugin-notion@2.3.2":
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/@notion-stuff/scully-plugin-notion/-/scully-plugin-notion-2.3.2.tgz#60ad1fef5c176f92e75c786accfd2963d0a4bdba"
+  integrity sha512-yVGwcRV6x9dtDn/1Tpjh8fmpqlwpJMSKJ1ByQaRa1o/Rr4By1xyvRDfHufAWmkbdCsxUCL8PadvlXjVG2nOToA==
   dependencies:
-    "@notion-stuff/blocks-html-parser" "2.3.0"
-    "@notion-stuff/blocks-markdown-parser" "2.3.0"
-    "@notion-stuff/v4-types" "2.3.0"
+    "@notion-stuff/blocks-html-parser" "2.3.2"
+    "@notion-stuff/blocks-markdown-parser" "2.3.2"
+    "@notion-stuff/v4-types" "2.3.2"
     "@notionhq/client" "~0.4.0"
 
-"@notion-stuff/v4-types@2.3.0":
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/@notion-stuff/v4-types/-/v4-types-2.3.0.tgz#2e305f015ba24984a0c319ce28917225d6049580"
-  integrity sha512-rnBvZQxWed9LIL8dzJE7blBfVuNEp38HckvpcKWaqPBIvuAQO4tR42s5RLEpZrIohZBhbP083DWJEnP3roNnTg==
+"@notion-stuff/v4-types@2.3.2":
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/@notion-stuff/v4-types/-/v4-types-2.3.2.tgz#c471e0aba1d7f67153a1366bbe9fceb1d0190e47"
+  integrity sha512-nUsK2jsrDU5SRbg1ATS0PNpSPEATUv7HOtEn7zmFAEysb6vvyVOTIne+J57GOJ0Vsx0KDtOaFTaLj7kf6lmbTw==
   dependencies:
     "@notionhq/client" "~0.4.0"
 
@@ -6150,11 +6150,6 @@ hex-color-regex@^1.1.0:
   resolved "https://registry.yarnpkg.com/hex-color-regex/-/hex-color-regex-1.1.0.tgz#4c06fccb4602fe2602b3c93df82d7e7dbf1a8a8e"
   integrity sha512-l9sfDFsuqtOqKDsQdqrMRk0U85RZc0RtOR9yPI7mRVOa4FsR/BVnZ0shmQRM96Ji99kYZP/7hn1cedc1+ApsTQ==
 
-highlight.js@11.2.0:
-  version "11.2.0"
-  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-11.2.0.tgz#a7e3b8c1fdc4f0538b93b2dc2ddd53a40c6ab0f0"
-  integrity sha512-JOySjtOEcyG8s4MLR2MNbLUyaXqUunmSnL2kdV/KuGJOmHZuAR5xC54Ko7goAXBWNhf09Vy3B+U7vR62UZ/0iw==
-
 hosted-git-info@^2.1.4, hosted-git-info@^2.7.1:
   version "2.8.9"
   resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.8.9.tgz#dffc0bf9a21c02209090f2aa69429e1414daf3f9"
@@ -9790,7 +9785,7 @@ pretty-hrtime@^1.0.3:
   resolved "https://registry.yarnpkg.com/pretty-hrtime/-/pretty-hrtime-1.0.3.tgz#b7e3ea42435a4c9b2759d99e0f201eb195802ee1"
   integrity sha1-t+PqQkNaTJsnWdmeDyAesZWALuE=
 
-prismjs@^1.25.0:
+prismjs@1.25.0, prismjs@^1.25.0:
   version "1.25.0"
   resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.25.0.tgz#6f822df1bdad965734b310b315a23315cf999756"
   integrity sha512-WCjJHl1KEWbnkQom1+SzftbtXMKQoezOCYs5rECqMN+jP+apI7ftoflyqigqzopSO3hMhTEb0mFClA8lkolgEg==

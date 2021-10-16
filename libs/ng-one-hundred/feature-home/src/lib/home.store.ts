@@ -19,9 +19,7 @@ export class HomeStore extends EnhancedComponentStore<HomeStoreState> {
   readonly vm$: Observable<HomeStoreVm> = this.select(
     this.selectors.days$,
     (days) => ({ days }),
-    {
-      debounce: true,
-    }
+    { debounce: true }
   );
 
   constructor(private scullyRoutesService: ScullyRoutesService) {

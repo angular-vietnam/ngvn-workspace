@@ -1,25 +1,49 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { ScullyRoutesService } from '@scullyio/ng-lib';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnInit,
+  ViewEncapsulation,
+} from '@angular/core';
+import { DayStore } from './day.store';
 
 @Component({
   selector: 'noh-day',
   template: `
-    <p>day works!</p>
-    <ng-container *ngIf="day$ | async as day">
-      <pre>{{ day | json }}</pre>
-    </ng-container>
+    <div class="container mx-auto p-8 h-full">
+      <ng-container *ngIf="vm$ | async as vm">
+        <h1 class="text-center text-4xl font-bold mb-6">{{ vm.day?.title }}</h1>
+        <h6 class="text-center text-blue-900">
+          <ng-container *ngFor="let author of vm.day?.authors; last as isLast">
+            {{ author }}{{ isLast ? '' : ', ' }}
+          </ng-container>
+        </h6>
 
-    <!-- This is where Scully will inject the static HTML -->
-    <scully-content></scully-content>
-    <!-- This is where Scully will inject the static HTML -->
+        <div *ngIf="vm.loading" class="progress progress-infinite">
+          <div class="progress-bar3"></div>
+        </div>
+
+        <!-- This is where Scully will inject the static HTML -->
+        <scully-content></scully-content>
+        <!-- This is where Scully will inject the static HTML -->
+
+        <h4 class="italic text-lg mt-4">
+          Published on {{ vm.day?.publishedAt | date: 'mediumDate' }}
+        </h4>
+      </ng-container>
+    </div>
   `,
-  styles: [],
+  styleUrls: ['./day.component.scss'],
+  preserveWhitespaces: true,
+  encapsulation: ViewEncapsulation.Emulated,
   changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [DayStore],
 })
 export class DayComponent implements OnInit {
-  readonly day$ = this.scullyRoutesService.getCurrent();
+  readonly vm$ = this.dayStore.vm$;
 
-  constructor(private scullyRoutesService: ScullyRoutesService) {}
+  constructor(private dayStore: DayStore) {}
 
-  ngOnInit(): void {}
+  ngOnInit() {
+    this.dayStore.initEffect();
+  }
 }

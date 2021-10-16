@@ -1,5 +1,15 @@
-import { NotionDom, NotionDomRouter } from '@notion-stuff/scully-plugin-notion';
-import { ScullyConfig } from '@scullyio/scully';
+import {
+  NotionDom,
+  NotionDomRouter,
+  NotionPluginOptions,
+} from '@notion-stuff/scully-plugin-notion';
+import { ScullyConfig, setPluginConfig } from '@scullyio/scully';
+
+setPluginConfig(NotionDom, {
+  notionBlocksHtmlParserOptions: {
+    mdHighlightingOptions: 'prismjs',
+  },
+} as NotionPluginOptions);
 
 export const config: ScullyConfig = {
   projectRoot: './apps/ng-one-hundred/src',

@@ -37,7 +37,7 @@
     "@angular-eslint/template-parser": "~12.5.0",
     "@angular/compiler-cli": "~12.2.10",
     "@angular/language-service": "~12.2.10",
-    "@notion-stuff/scully-plugin-notion": "2.3.0",
+    "@notion-stuff/scully-plugin-notion": "2.3.2",
     "@nrwl/angular": "12.10.0",
     "@nrwl/cli": "12.10.0",
     "@nrwl/cypress": "12.10.0",
@@ -55,15 +55,14 @@
     "eslint": "8.0.1",
     "eslint-config-prettier": "8.3.0",
     "eslint-plugin-cypress": "~2.12.1",
-    "highlight.js": "11.2.0",
     "jest": "27.2.5",
     "jest-preset-angular": "10.0.1",
     "marked": "3.0.7",
     "ng-packagr": "~12.2.3",
     "prettier": "~2.4.1",
+    "prismjs": "1.25.0",
     "tailwindcss": "2.2.17",
     "ts-jest": "27.0.5",
     "typescript": "~4.3.5"
   }
 }
-
