@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Day } from '@ngvn/ng-one-hundred/data-access-day';
 import { EnhancedComponentStore } from '@ngvn/ng-one-hundred/util-enhanced-component-store';
+import { MetaService } from '@ngvn/ng-one-hundred/util-meta-service';
 import { ScullyRoutesService } from '@scullyio/ng-lib';
 import { Observable, tap } from 'rxjs';
 
@@ -27,7 +28,10 @@ export class DayStore extends EnhancedComponentStore<DayState> {
     { debounce: true }
   );
 
-  constructor(private scullyRoutesService: ScullyRoutesService) {
+  constructor(
+    private scullyRoutesService: ScullyRoutesService,
+    private metaService: MetaService
+  ) {
     super(dayInitialState);
   }
 
@@ -39,9 +43,18 @@ export class DayStore extends EnhancedComponentStore<DayState> {
     )
   );
 
-  readonly setDay = this.updater<Day>((state, day) => ({ ...state, day }));
+  readonly setDay = this.updater<Day>((state, day) => {
+    this.metaService.update(day);
+    return { ...state, day };
+  });
+
   readonly setLoading = this.updater<boolean>((state, loading) => ({
     ...state,
     loading,
   }));
+
+  ngOnDestroy() {
+    super.ngOnDestroy();
+    this.metaService.resetMeta();
+  }
 }

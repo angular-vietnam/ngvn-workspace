@@ -10,6 +10,13 @@ import { DayStore } from './day.store';
   selector: 'noh-day',
   template: `
     <div class="container mx-auto p-8 h-full">
+      <a
+        type="button"
+        class="px-4 py-2 rounded border hover:bg-black hover:text-white"
+        routerLink="/"
+      >
+        Home
+      </a>
       <ng-container *ngIf="vm$ | async as vm">
         <h1 class="text-center text-4xl font-bold mb-6">{{ vm.day?.title }}</h1>
         <h6 class="text-center text-blue-900">

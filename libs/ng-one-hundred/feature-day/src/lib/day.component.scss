@@ -10,7 +10,7 @@ strong {
   @apply font-bold;
 }
 
-a {
+a:not([routerLink]) {
   @apply text-blue-600 underline cursor-pointer;
 }
 

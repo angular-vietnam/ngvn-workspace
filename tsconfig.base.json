@@ -36,6 +36,9 @@
       "@ngvn/ng-one-hundred/util-enhanced-component-store": [
         "libs/ng-one-hundred/util-enhanced-component-store/src/index.ts"
       ],
+      "@ngvn/ng-one-hundred/util-meta-service": [
+        "libs/ng-one-hundred/util-meta-service/src/index.ts"
+      ],
       "@ngvn/shared/assets": ["libs/shared/assets/src/index.ts"],
       "@ngvn/shared/environments": ["libs/shared/environments/src/index.ts"],
       "@ngvn/shared/styles": ["libs/shared/styles/src/index.ts"]

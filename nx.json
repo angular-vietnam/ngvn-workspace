@@ -56,6 +56,9 @@
     "ng-one-hundred-util-enhanced-component-store": {
       "tags": ["scope:ng-one-hundred:type:util"]
     },
+    "ng-one-hundred-util-meta-service": {
+      "tags": ["scope:ng-one-hundred", "type:util"]
+    },
     "shared-assets": {
       "tags": ["scope:shared", "type:assets"]
     },
