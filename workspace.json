@@ -111,7 +111,9 @@
             "parallel": false
           }
         }
-      }
+      },
+      "tags": [],
+      "implicitDependencies": ["shared-assets", "shared-styles"]
     },
     "ng-one-hundred-data-access-day": {
       "root": "libs/ng-one-hundred/data-access-day",
@@ -143,7 +145,8 @@
             "passWithNoTests": true
           }
         }
-      }
+      },
+      "tags": ["scope:ng-one-hundred", "type:data-access"]
     },
     "ng-one-hundred-e2e": {
       "root": "apps/ng-one-hundred-e2e",
@@ -170,7 +173,9 @@
             "lintFilePatterns": ["apps/ng-one-hundred-e2e/**/*.{js,ts}"]
           }
         }
-      }
+      },
+      "tags": [],
+      "implicitDependencies": ["ng-one-hundred"]
     },
     "ng-one-hundred-feature-day": {
       "projectType": "library",
@@ -211,7 +216,8 @@
             ]
           }
         }
-      }
+      },
+      "tags": ["scope:ng-one-hundred", "type:feature"]
     },
     "ng-one-hundred-feature-home": {
       "projectType": "library",
@@ -252,7 +258,8 @@
             ]
           }
         }
-      }
+      },
+      "tags": ["scope:ng-one-hundred", "type:feature"]
     },
     "ng-one-hundred-feature-shell": {
       "projectType": "library",
@@ -293,7 +300,8 @@
             ]
           }
         }
-      }
+      },
+      "tags": ["scope:ng-one-hundred", "type:feature"]
     },
     "ng-one-hundred-ui-day-list": {
       "projectType": "library",
@@ -334,7 +342,8 @@
             ]
           }
         }
-      }
+      },
+      "tags": ["scope:ng-one-hundred", "type:ui"]
     },
     "ng-one-hundred-ui-home-banner": {
       "projectType": "library",
@@ -375,7 +384,8 @@
             ]
           }
         }
-      }
+      },
+      "tags": ["scope:ng-one-hundred", "type:ui"]
     },
     "ng-one-hundred-util-enhanced-component-store": {
       "projectType": "library",
@@ -418,7 +428,8 @@
             ]
           }
         }
-      }
+      },
+      "tags": ["scope:ng-one-hundred:type:util"]
     },
     "ng-one-hundred-util-meta-service": {
       "projectType": "library",
@@ -459,7 +470,8 @@
             ]
           }
         }
-      }
+      },
+      "tags": ["scope:ng-one-hundred", "type:util"]
     },
     "shared-assets": {
       "root": "libs/shared/assets",
@@ -483,7 +495,8 @@
             "lintFilePatterns": ["libs/shared/assets/**/*.ts"]
           }
         }
-      }
+      },
+      "tags": ["scope:shared", "type:assets"]
     },
     "shared-environments": {
       "root": "libs/shared/environments",
@@ -507,7 +520,8 @@
             "lintFilePatterns": ["libs/shared/environments/**/*.ts"]
           }
         }
-      }
+      },
+      "tags": ["scope:shared", "type:environments"]
     },
     "shared-styles": {
       "root": "libs/shared/styles",
@@ -531,27 +545,8 @@
             "lintFilePatterns": ["libs/shared/styles/**/*.ts"]
           }
         }
-      }
+      },
+      "tags": ["scope:shared", "type:styles"]
     }
-  },
-  "cli": {
-    "defaultCollection": "@nrwl/angular"
-  },
-  "generators": {
-    "@nrwl/angular:application": {
-      "style": "scss",
-      "linter": "eslint",
-      "unitTestRunner": "jest",
-      "e2eTestRunner": "cypress"
-    },
-    "@nrwl/angular:library": {
-      "style": "scss",
-      "linter": "eslint",
-      "unitTestRunner": "jest"
-    },
-    "@nrwl/angular:component": {
-      "style": "scss"
-    }
-  },
-  "defaultProject": "ng-one-hundred"
+  }
 }

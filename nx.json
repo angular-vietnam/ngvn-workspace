@@ -26,47 +26,24 @@
       }
     ]
   },
-  "projects": {
-    "ng-one-hundred": {
-      "tags": [],
-      "implicitDependencies": ["shared-assets", "shared-styles"]
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "generators": {
+    "@nrwl/angular:application": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
     },
-    "ng-one-hundred-data-access-day": {
-      "tags": ["scope:ng-one-hundred", "type:data-access"]
+    "@nrwl/angular:library": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest"
     },
-    "ng-one-hundred-e2e": {
-      "tags": [],
-      "implicitDependencies": ["ng-one-hundred"]
-    },
-    "ng-one-hundred-feature-day": {
-      "tags": ["scope:ng-one-hundred", "type:feature"]
-    },
-    "ng-one-hundred-feature-home": {
-      "tags": ["scope:ng-one-hundred", "type:feature"]
-    },
-    "ng-one-hundred-feature-shell": {
-      "tags": ["scope:ng-one-hundred", "type:feature"]
-    },
-    "ng-one-hundred-ui-day-list": {
-      "tags": ["scope:ng-one-hundred", "type:ui"]
-    },
-    "ng-one-hundred-ui-home-banner": {
-      "tags": ["scope:ng-one-hundred", "type:ui"]
-    },
-    "ng-one-hundred-util-enhanced-component-store": {
-      "tags": ["scope:ng-one-hundred:type:util"]
-    },
-    "ng-one-hundred-util-meta-service": {
-      "tags": ["scope:ng-one-hundred", "type:util"]
-    },
-    "shared-assets": {
-      "tags": ["scope:shared", "type:assets"]
-    },
-    "shared-environments": {
-      "tags": ["scope:shared", "type:environments"]
-    },
-    "shared-styles": {
-      "tags": ["scope:shared", "type:styles"]
+    "@nrwl/angular:component": {
+      "style": "scss"
     }
-  }
+  },
+  "defaultProject": "ng-one-hundred"
 }
