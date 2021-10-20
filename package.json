@@ -37,7 +37,7 @@
     "@angular-eslint/template-parser": "~12.5.0",
     "@angular/compiler-cli": "~12.2.10",
     "@angular/language-service": "~12.2.10",
-    "@notion-stuff/scully-plugin-notion": "2.3.2",
+    "@notion-stuff/scully-plugin-notion": "2.4.0",
     "@nrwl/angular": "12.10.0",
     "@nrwl/cli": "12.10.0",
     "@nrwl/cypress": "12.10.0",
