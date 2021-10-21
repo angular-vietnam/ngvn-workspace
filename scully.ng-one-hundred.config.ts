@@ -1,7 +1,8 @@
 import {
   NotionDom,
+  NotionDomPluginOptions,
   NotionDomRouter,
-  NotionPluginOptions,
+  NotionDomRouterPluginOptions,
 } from '@notion-stuff/scully-plugin-notion';
 import { ScullyConfig, setPluginConfig } from '@scullyio/scully';
 
@@ -9,7 +10,7 @@ setPluginConfig(NotionDom, {
   notionBlocksHtmlParserOptions: {
     mdHighlightingOptions: 'prismjs',
   },
-} as NotionPluginOptions);
+} as NotionDomPluginOptions);
 
 export const config: ScullyConfig = {
   projectRoot: './apps/ng-one-hundred/src',
@@ -22,6 +23,6 @@ export const config: ScullyConfig = {
       postRenderers: [NotionDom],
       databaseId: '0bad59ebe1394e03885fdf79e235d5bc',
       basePath: '/day',
-    },
+    } as NotionDomRouterPluginOptions,
   },
 };

@@ -169,3 +169,16 @@ Using stored unhandled routes!.
    To discover new routes in the angular app use "npm run scully -- --scanRoutes"
 ----------------------------------
   route: /day/day-two. Try 1 failed with Error: timeout on /day/day-two
+----------------------------------
+Using stored unhandled routes!.
+   To discover new routes in the angular app use "npm run scully -- --scanRoutes"
+----------------------------------
+ The router plugin "notionDomRouter has thrown the below error,
+              while trying to render route "unknown"
+              Scully will exitError: Something went wrong. TypeError: Cannot read property 'type' of null
+
+
+----------------------------------
+Using stored unhandled routes!.
+   To discover new routes in the angular app use "npm run scully -- --scanRoutes"
+----------------------------------

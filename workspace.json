@@ -104,7 +104,7 @@
           "executor": "@nrwl/workspace:run-commands",
           "options": {
             "commands": [
-              "dotenv scully",
+              "dotenv scully -- --project=ng-one-hundred",
               "mv 'apps/ng-one-hundred/src/assets/scully-routes.json' 'libs/shared/assets/src/assets'",
               "rm -rf 'apps/ng-one-hundred/src/assets'"
             ],
