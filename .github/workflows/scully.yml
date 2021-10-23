@@ -19,7 +19,7 @@ jobs:
           fetch-depth: 0
 
       - name: Build Scully with Scan Routes
-        uses: ${{ github.action_path }}/build-scully
+        uses: ./.github/actions/build-scully
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           notion_api_key: ${{ secrets.NOTION_API_KEY }}
@@ -35,7 +35,7 @@ jobs:
           fetch-depth: 0
 
       - name: Check files changed
-        uses: ${{ github.action_path }}/check-changed-files
+        uses: ./.github/actions/check-changed-files
         id: check-files-changed
     outputs:
       should_build: ${{ steps.check-files-changed.outputs.is_scully_changed == 'true' }}
@@ -51,7 +51,7 @@ jobs:
           fetch-depth: 0
 
       - name: Build Scully
-        uses: ${{ github.action_path }}/build-scully
+        uses: ./.github/actions/build-scully
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           notion_api_key: ${{ secrets.NOTION_API_KEY }}
