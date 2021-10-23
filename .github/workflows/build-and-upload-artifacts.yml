@@ -31,9 +31,6 @@ jobs:
         with:
           ref: main
 
-      - name: Derive appropriate SHAs for base and head for `nx affected` commands
-        uses: nrwl/nx-set-shas@v2
-
       - name: Cache node modules
         uses: actions/cache@v2
         id: cached-deps
@@ -61,6 +58,9 @@ jobs:
         with:
           name: ngvn-nx-cache
           workflow: build-and-upload-artifacts.yml
+
+      - name: Derive appropriate SHAs for base and head for `nx affected` commands
+        uses: nrwl/nx-set-shas@v2
 
       - name: Build projects
         run: |
