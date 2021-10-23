@@ -33,6 +33,11 @@ jobs:
         uses: tj-actions/changed-files@v10
         with:
           files: scully.ng-one-hundred.config.ts
+
+      - name: Echo changed flags
+        run: |
+          echo ${{ steps.check-angular-source.outputs.any-changed }}
+          echo ${{ steps.check-scully-source.outputs.any-changed }}
     outputs:
       is-angular-changed: ${{ steps.check-angular-source.outputs.any-changed }}
       is-scully-changed: ${{ steps.check-scully-source.outputs.any-changed }}
