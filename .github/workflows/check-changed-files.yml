@@ -1,11 +1,11 @@
 name: Check Changed Files
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+#  push:
+#    branches:
+#      - main
+#  pull_request:
+#    branches:
+#      - main
   workflow_dispatch:
 jobs:
   check-source:
@@ -34,10 +34,6 @@ jobs:
         with:
           files: scully.ng-one-hundred.config.ts
 
-      - name: Echo changed flags
-        run: |
-          echo ${{ steps.check-angular-source.outputs.any_changed }}
-          echo ${{ steps.check-scully-source.outputs.any_changed }}
     outputs:
       is_angular_changed: ${{ steps.check-angular-source.outputs.any_changed }}
       is_scully_changed: ${{ steps.check-scully-source.outputs.any_changed }}
@@ -51,4 +47,4 @@ jobs:
           # Built-in Github action conditionals are not supported in composite steps so have to check manually in bash
           echo "IS_ANGULAR_CHANGED=${{ needs.check-source.outputs.is_angular_changed }}" >> $GITHUB_ENV
           echo "IS_SCULLY_CHANGED=${{ needs.check-source.outputs.is_scully_changed }}" >> $GITHUB_ENV
-          echo "IS_ANGULAR_CHANGED=$IS_ANGULAR_CHANGED and IS_SCULLY_CHANGED=$IS_SCULLY_CHANGED environment variables have been set for the current Job"
+          echo "IS_ANGULAR_CHANGED and IS_SCULLY_CHANGED environment variables have been set for the current Job"

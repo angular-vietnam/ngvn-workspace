@@ -1,14 +1,24 @@
 name: Build and Upload Artifacts
 on:
   workflow_dispatch:
-#  push:
-#    branches:
-#      - main
-#  pull_request:
-#    branches:
-#      - main
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 jobs:
+  check-files:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check files changed
+        uses: ./.github/actions/check-changed-files
+        id: check-files-changed
+    outputs:
+      should_build: ${{ steps.check-files-changed.outputs.is_angular_changed == 'true' }}
   build:
+    needs: check-files
+    if: ${{ needs.check-files.outputs.should_build }}
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -38,7 +48,7 @@ jobs:
         run: yarn install
 
       - name: Build projects
-        run: yarn build --base-href=/100-day/
+        run: yarn build
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v2
@@ -46,3 +56,4 @@ jobs:
           name: ngvn-artifacts
           path: |
             ./dist/apps
+            ./dist/libs
