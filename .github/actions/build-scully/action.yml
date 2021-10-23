@@ -57,7 +57,7 @@ runs:
     - name: Scully Build
       shell: bash
       run: |
-        if [ ${{ inputs.should_scan_routes }} ];
+        if ${{ inputs.should_scan_routes == 'true' }}
         then
           yarn scully:prod --scanRoutes
         else
