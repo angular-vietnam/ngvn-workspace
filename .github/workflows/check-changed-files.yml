@@ -1,0 +1,48 @@
+name: Check Changed Files
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+jobs:
+  check-source:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Check Angular Source
+        id: check-angular-source
+        uses: tj-actions/changed-files@v10
+        with:
+          files: |
+            package.json
+            nx.json
+            workspace.json
+            tailwind.config.js
+            libs/**/*
+            apps/**/*
+
+      - name: Check Scully Source
+        id: check-scully-source
+        uses: tj-actions/changed-files@v10
+        with:
+          files: scully.ng-one-hundred.config.ts
+    outputs:
+      is-angular-changed: ${{ steps.check-angular-source.outputs.any-changed == 'true' }}
+      is-scully-changed: ${{ steps.check-scully-source.outputs.any-changed == 'true' }}
+  output:
+    runs-on: ubuntu-latest
+    needs: check-source
+    steps:
+      - name: Set ENV
+        run: |
+          # Built-in Github action conditionals are not supported in composite steps so have to check manually in bash
+          echo "IS_ANGULAR_CHANGED=${{ steps.check-source.outputs.is-angular-changed }}" >> $GITHUB_ENV
+          echo "IS_SCULLY_CHANGED=${{ steps.check-source.outputs.is-scully-changed }}" >> $GITHUB_ENV
+          echo "IS_ANGULAR_CHANGED=$IS_ANGULAR_CHANGED and IS_SCULLY_CHANGED=$IS_SCULLY_CHANGED environment variables have been set for the current Job"
