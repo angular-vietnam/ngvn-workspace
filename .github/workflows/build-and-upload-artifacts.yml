@@ -26,7 +26,12 @@ jobs:
     if: ${{ needs.check-files.outputs.should_build == 'false' }}
     runs-on: ubuntu-latest
     steps:
-      - run: exit 1
+      - name: Fail and notice
+        uses: actions/github-script@v5
+        with:
+          script: |
+            core.notice('This is a fail-safe failure. No Angular build needs to run');
+            core.setFailed('Fail-safe Failure. OK to ignore. Moving to Scully workflow');
   build:
     needs: check-files
     if: ${{ needs.check-files.outputs.should_build == 'true' }}
