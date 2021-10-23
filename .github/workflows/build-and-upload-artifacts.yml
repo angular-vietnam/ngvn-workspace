@@ -21,6 +21,12 @@ jobs:
         id: check-files-changed
     outputs:
       should_build: ${{ steps.check-files-changed.outputs.is_angular_changed == 'true' }}
+  fail-early:
+    needs: check-files
+    if: ${{ !needs.check-files.outputs.should_build }}
+    runs-on: ubuntu-latest
+    steps:
+      - run: exit 1
   build:
     needs: check-files
     if: ${{ needs.check-files.outputs.should_build }}
@@ -29,7 +35,7 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v2
         with:
-          ref: main
+          fetch-depth: 0
 
       - name: Cache node modules
         uses: actions/cache@v2

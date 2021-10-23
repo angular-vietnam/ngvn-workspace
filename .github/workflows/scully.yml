@@ -1,0 +1,57 @@
+name: Run Scully
+on:
+  workflow_run:
+    workflows:
+      - "Build and Upload Artifacts"
+    types:
+      - completed
+    branches:
+      - main
+  workflow_dispatch:
+jobs:
+  on-success:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Build Scully with Scan Routes
+        uses: ${{ github.action_path }}/build-scully
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          notion_api_key: ${{ secrets.NOTION_API_KEY }}
+          should_scan_routes: true
+
+  check-files:
+    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Check files changed
+        uses: ${{ github.action_path }}/check-changed-files
+        id: check-files-changed
+    outputs:
+      should_build: ${{ steps.check-files-changed.outputs.is_scully_changed == 'true' }}
+
+  on-failure:
+    runs-on: ubuntu-latest
+    needs: check-files
+    if: ${{ needs.check-files.outputs.should_build }}
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Build Scully
+        uses: ${{ github.action_path }}/build-scully
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          notion_api_key: ${{ secrets.NOTION_API_KEY }}
