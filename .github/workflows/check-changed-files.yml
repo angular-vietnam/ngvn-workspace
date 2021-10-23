@@ -36,11 +36,11 @@ jobs:
 
       - name: Echo changed flags
         run: |
-          echo ${{ steps.check-angular-source.outputs.any-changed }}
-          echo ${{ steps.check-scully-source.outputs.any-changed }}
+          echo ${{ steps.check-angular-source.outputs.any_changed }}
+          echo ${{ steps.check-scully-source.outputs.any_changed }}
     outputs:
-      is-angular-changed: ${{ steps.check-angular-source.outputs.any-changed }}
-      is-scully-changed: ${{ steps.check-scully-source.outputs.any-changed }}
+      is_angular_changed: ${{ steps.check-angular-source.outputs.any_changed }}
+      is_scully_changed: ${{ steps.check-scully-source.outputs.any_changed }}
   output:
     runs-on: ubuntu-latest
     needs: check-source
@@ -49,6 +49,6 @@ jobs:
         shell: bash
         run: |
           # Built-in Github action conditionals are not supported in composite steps so have to check manually in bash
-          echo "IS_ANGULAR_CHANGED=${{ needs.check-source.outputs.is-angular-changed }}" >> $GITHUB_ENV
-          echo "IS_SCULLY_CHANGED=${{ needs.check-source.outputs.is-scully-changed }}" >> $GITHUB_ENV
+          echo "IS_ANGULAR_CHANGED=${{ needs.check-source.outputs.is_angular_changed }}" >> $GITHUB_ENV
+          echo "IS_SCULLY_CHANGED=${{ needs.check-source.outputs.is_scully_changed }}" >> $GITHUB_ENV
           echo "IS_ANGULAR_CHANGED=$IS_ANGULAR_CHANGED and IS_SCULLY_CHANGED=$IS_SCULLY_CHANGED environment variables have been set for the current Job"
