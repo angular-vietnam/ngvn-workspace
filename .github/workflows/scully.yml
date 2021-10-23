@@ -25,7 +25,7 @@ jobs:
           notion_api_key: ${{ secrets.NOTION_API_KEY }}
           should_scan_routes: true
 
-  check-files:
+  on-failure:
     if: ${{ github.event.workflow_run.conclusion == 'failure' }}
     runs-on: ubuntu-latest
     steps:
@@ -40,10 +40,30 @@ jobs:
     outputs:
       should_build: ${{ steps.check-files-changed.outputs.is_scully_changed == 'true' }}
 
-  on-failure:
+  upload:
     runs-on: ubuntu-latest
-    needs: check-files
-    if: ${{ needs.check-files.outputs.should_build == 'true' }}
+    needs: on-failure
+    if: ${{ needs.on-failure.outputs.should_build != 'true' }}
+    steps:
+      - name: Download Scully artifacts
+        continue-on-error: true
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          name: ngvn-scully
+          workflow: scully.yml
+          path: ./dist
+
+      - name: Reupload
+        uses: actions/upload-artifact
+        with:
+          name: ngvn-scully
+          path: |
+            ./dist
+
+  build:
+    runs-on: ubuntu-latest
+    needs: on-failure
+    if: ${{ needs.on-failure.outputs.should_build == 'true' }}
     steps:
       - name: Check out repo
         uses: actions/checkout@v2
