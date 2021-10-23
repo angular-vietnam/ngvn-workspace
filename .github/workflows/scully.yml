@@ -54,7 +54,7 @@ jobs:
           path: ./dist
 
       - name: Reupload
-        uses: actions/upload-artifact
+        uses: actions/upload-artifact@v2
         with:
           name: ngvn-scully
           path: |
