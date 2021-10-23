@@ -58,6 +58,7 @@ jobs:
         with:
           name: ngvn-nx-cache
           workflow: build-and-upload-artifacts.yml
+          path: ./node_modules/.cache/nx
 
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
         uses: nrwl/nx-set-shas@v2
