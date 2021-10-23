@@ -44,6 +44,6 @@ jobs:
         shell: bash
         run: |
           # Built-in Github action conditionals are not supported in composite steps so have to check manually in bash
-          echo "IS_ANGULAR_CHANGED=${{ steps.check-source.outputs.is-angular-changed }}" >> $GITHUB_ENV
-          echo "IS_SCULLY_CHANGED=${{ steps.check-source.outputs.is-scully-changed }}" >> $GITHUB_ENV
+          echo "IS_ANGULAR_CHANGED=${{ needs.check-source.outputs.is-angular-changed }}" >> $GITHUB_ENV
+          echo "IS_SCULLY_CHANGED=${{ needs.check-source.outputs.is-scully-changed }}" >> $GITHUB_ENV
           echo "IS_ANGULAR_CHANGED=$IS_ANGULAR_CHANGED and IS_SCULLY_CHANGED=$IS_SCULLY_CHANGED environment variables have been set for the current Job"
