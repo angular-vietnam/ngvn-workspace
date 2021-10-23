@@ -55,13 +55,14 @@ jobs:
         if: ${{ steps.cached-deps.outputs.cache-hit != 'true' }}
         run: yarn install
 
-      - name: Build
-        if: ${{ env.NX_BASE == '' || env.NX_BASE == null || env.NX_HEAD == '' || env.NX_HEAD == null }}
-        run: yarn build
-
-      - name: Build affected
-        if: ${{ env.NX_BASE != '' && env.NX_BASE != null && env.NX_HEAD != '' && env.NX_HEAD != null }}
-        run: yarn build:affected
+      - name: Build projects
+        run: |
+          if [ "${{ env.NX_BASE == '' || env.NX_BASE == null || env.NX_HEAD == '' || env.NX_HEAD == null }}" = "true" ];
+          then
+            yarn build
+          else
+            yarn build:affected
+          fi
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v2
