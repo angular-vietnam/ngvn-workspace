@@ -55,6 +55,11 @@ jobs:
         if: ${{ steps.cached-deps.outputs.cache-hit != 'true' }}
         run: yarn install
 
+      - name: Download Nx Cache
+        uses: actions/download-artifact@v2
+        with:
+          name: ngvn-nx-cache
+
       - name: Build projects
         run: |
           if [ "${{ env.NX_BASE == '' || env.NX_BASE == null || env.NX_HEAD == '' || env.NX_HEAD == null }}" = "true" ];
@@ -63,6 +68,12 @@ jobs:
           else
             yarn build:affected
           fi
+
+      - name: Upload Nx Cache
+        uses: actions/upload-artifact@v2
+        with:
+          name: ngvn-nx-cache
+          path: ./node_modules/.cache/nx
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v2
