@@ -23,13 +23,13 @@ jobs:
       should_build: ${{ steps.check-files-changed.outputs.is_angular_changed == 'true' }}
   fail-early:
     needs: check-files
-    if: ${{ !needs.check-files.outputs.should_build }}
+    if: ${{ needs.check-files.outputs.should_build == 'false' }}
     runs-on: ubuntu-latest
     steps:
       - run: exit 1
   build:
     needs: check-files
-    if: ${{ needs.check-files.outputs.should_build }}
+    if: ${{ needs.check-files.outputs.should_build == 'true' }}
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
