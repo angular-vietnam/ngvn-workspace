@@ -56,9 +56,10 @@ jobs:
         run: yarn install
 
       - name: Download Nx Cache
-        uses: actions/download-artifact@v2
+        uses: dawidd6/action-download-artifact@v2
         with:
           name: ngvn-nx-cache
+          workflow: build-and-upload-artifacts.yml
 
       - name: Build projects
         run: |
