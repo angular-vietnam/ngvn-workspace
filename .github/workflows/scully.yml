@@ -40,6 +40,12 @@ jobs:
     outputs:
       should_build: ${{ steps.check-files-changed.outputs.is_scully_changed == 'true' }}
 
+  on-dispatch:
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'workflow_dispatch' }}
+    outputs:
+      is_dispatch: 'true'
+
   upload:
     runs-on: ubuntu-latest
     needs: on-failure
@@ -62,8 +68,10 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
-    needs: on-failure
-    if: ${{ needs.on-failure.outputs.should_build == 'true' }}
+    needs:
+      - on-failure
+      - on-dispatch
+    if: ${{ needs.on-failure.outputs.should_build == 'true' || needs.on-dispatch.outputs.is_dispatch == 'true' }}
     steps:
       - name: Check out repo
         uses: actions/checkout@v2
