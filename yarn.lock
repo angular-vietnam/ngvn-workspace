@@ -1622,13 +1622,6 @@
     merge-source-map "^1.1.0"
     schema-utils "^2.7.0"
 
-"@ngrx/component-store@12.5.0":
-  version "12.5.0"
-  resolved "https://registry.yarnpkg.com/@ngrx/component-store/-/component-store-12.5.0.tgz#d7646979b496080e41469a4f119b8a519dd57044"
-  integrity sha512-ivaKTxd6mG9JeDIbrEmWe3C3MU6JFSN0k3/dfLV8CfAHSiS1mK3iyWHaL6EPeVVQ8NWYY6pMtBc3ZGRjLwCZFw==
-  dependencies:
-    tslib "^2.0.0"
-
 "@ngtools/webpack@12.2.11":
   version "12.2.11"
   resolved "https://registry.yarnpkg.com/@ngtools/webpack/-/webpack-12.2.11.tgz#39427c73943277dfd191f0cb9145fb184cf13327"
@@ -1934,6 +1927,27 @@
     "@types/estree" "0.0.39"
     estree-walker "^1.0.1"
     picomatch "^2.2.2"
+
+"@rx-angular/cdk@1.0.0-alpha.10":
+  version "1.0.0-alpha.10"
+  resolved "https://registry.yarnpkg.com/@rx-angular/cdk/-/cdk-1.0.0-alpha.10.tgz#751f20df13b3299965e5cd8123eb14e02e6e4127"
+  integrity sha512-QI2jtVjxBccBmcir0yfkgY/IYFgFh/sOeJNFj28DWeLWIizfdyTb8YCcelni4dbJSpQkV+d+CAhyM0IiW4R1Pw==
+  dependencies:
+    tslib "^2.0.0"
+
+"@rx-angular/state@1.4.6":
+  version "1.4.6"
+  resolved "https://registry.yarnpkg.com/@rx-angular/state/-/state-1.4.6.tgz#a32cc064fc50ba6f7fa613b5be1cfba57300f375"
+  integrity sha512-ylXJbk5Q3SMnDSOxiRNin+2XgobKq/8tk33PaitQPeHC8oSqx/yPpySzw9b2DBmJMjaDSFgGov30RwuwfPCY3A==
+  dependencies:
+    tslib "^2.0.0"
+
+"@rx-angular/template@1.0.0-beta.28":
+  version "1.0.0-beta.28"
+  resolved "https://registry.yarnpkg.com/@rx-angular/template/-/template-1.0.0-beta.28.tgz#18715b0e1852b71e5c2fc714f888be8b6d93a94a"
+  integrity sha512-yM1xfLLEPOjoJ0G430GVYxS8aG9a5c15z6XYDY1+mZ8FhQhy9bCNlrhFN2qL8wFZIJMIG7WEUqfdFKmrDSIx8Q==
+  dependencies:
+    tslib "^2.0.0"
 
 "@schematics/angular@^12.0.0", "@schematics/angular@~12.2.0":
   version "12.2.11"

@@ -4,7 +4,7 @@ import {
   OnInit,
   ViewEncapsulation,
 } from '@angular/core';
-import { DayStore } from './day.store';
+import { DayStateService } from './day.state';
 
 @Component({
   selector: 'noh-day',
@@ -17,7 +17,7 @@ import { DayStore } from './day.store';
       >
         Home
       </a>
-      <ng-container *ngIf="vm$ | async as vm">
+      <ng-container *rxLet="vm$; let vm">
         <h1 class="text-center text-4xl font-bold mb-6">{{ vm.day?.title }}</h1>
         <h6 class="text-center text-blue-900">
           <ng-container *ngFor="let author of vm.day?.authors; last as isLast">
@@ -43,14 +43,14 @@ import { DayStore } from './day.store';
   preserveWhitespaces: true,
   encapsulation: ViewEncapsulation.Emulated,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [DayStore],
+  providers: [DayStateService],
 })
 export class DayComponent implements OnInit {
-  readonly vm$ = this.dayStore.vm$;
+  readonly vm$ = this.dayStateService.vm$;
 
-  constructor(private dayStore: DayStore) {}
+  constructor(private dayStateService: DayStateService) {}
 
   ngOnInit() {
-    this.dayStore.initEffect();
+    this.dayStateService.initEffect();
   }
 }

@@ -5,29 +5,29 @@ import {
   OnInit,
   ViewChild,
 } from '@angular/core';
-import { HomeStore } from './home.store';
+import { HomeStateService } from './home.state';
 
 @Component({
   selector: 'noh-home',
   template: `
-    <ng-container *ngIf="vm$ | async as vm">
+    <ng-container *rxLet="vm$; let vm">
       <noh-home-banner (scrollClick)="onScrollClick()"></noh-home-banner>
       <noh-day-list #dayList [days]="vm.days"></noh-day-list>
     </ng-container>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [HomeStore],
+  providers: [HomeStateService],
 })
 export class HomeComponent implements OnInit {
   @ViewChild('dayList', { read: ElementRef })
   dayListEl?: ElementRef<HTMLElement>;
 
-  readonly vm$ = this.homeStore.vm$;
+  readonly vm$ = this.homeStateService.select();
 
-  constructor(private homeStore: HomeStore) {}
+  constructor(private homeStateService: HomeStateService) {}
 
   ngOnInit() {
-    this.homeStore.initEffect();
+    this.homeStateService.initEffect();
   }
 
   onScrollClick() {

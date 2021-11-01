@@ -50,7 +50,6 @@ import {
       ></ng-particles>
     </div>
   `,
-  styles: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeBannerComponent {

@@ -33,9 +33,6 @@
       "@ngvn/ng-one-hundred/ui-home-banner": [
         "libs/ng-one-hundred/ui-home-banner/src/index.ts"
       ],
-      "@ngvn/ng-one-hundred/util-enhanced-component-store": [
-        "libs/ng-one-hundred/util-enhanced-component-store/src/index.ts"
-      ],
       "@ngvn/ng-one-hundred/util-meta-service": [
         "libs/ng-one-hundred/util-meta-service/src/index.ts"
       ],

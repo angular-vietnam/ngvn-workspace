@@ -387,50 +387,6 @@
       },
       "tags": ["scope:ng-one-hundred", "type:ui"]
     },
-    "ng-one-hundred-util-enhanced-component-store": {
-      "projectType": "library",
-      "root": "libs/ng-one-hundred/util-enhanced-component-store",
-      "sourceRoot": "libs/ng-one-hundred/util-enhanced-component-store/src",
-      "prefix": "nxc",
-      "targets": {
-        "build": {
-          "executor": "@nrwl/angular:ng-packagr-lite",
-          "outputs": ["dist/libs/ng-one-hundred/util-enhanced-component-store"],
-          "options": {
-            "project": "libs/ng-one-hundred/util-enhanced-component-store/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "libs/ng-one-hundred/util-enhanced-component-store/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "libs/ng-one-hundred/util-enhanced-component-store/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/ng-one-hundred/util-enhanced-component-store"
-          ],
-          "options": {
-            "jestConfig": "libs/ng-one-hundred/util-enhanced-component-store/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/ng-one-hundred/util-enhanced-component-store/src/**/*.ts",
-              "libs/ng-one-hundred/util-enhanced-component-store/src/**/*.html"
-            ]
-          }
-        }
-      },
-      "tags": ["scope:ng-one-hundred:type:util"]
-    },
     "ng-one-hundred-util-meta-service": {
       "projectType": "library",
       "root": "libs/ng-one-hundred/util-meta-service",
