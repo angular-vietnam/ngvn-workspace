@@ -10,11 +10,6 @@ export interface DayState {
   loading: boolean;
 }
 
-export const dayInitialState: DayState = {
-  day: null,
-  loading: false,
-};
-
 @Injectable()
 export class DayStateService extends RxState<DayState> {
   readonly vm$ = this.select(selectSlice(['day', 'loading']));
@@ -27,7 +22,10 @@ export class DayStateService extends RxState<DayState> {
   }
 
   initEffect() {
-    this.set(dayInitialState);
+    this.set({
+      day: null,
+      loading: false,
+    });
     this.connect(
       'day',
       (this.scullyRoutesService.getCurrent() as Observable<Day>).pipe(

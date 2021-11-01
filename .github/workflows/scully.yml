@@ -43,6 +43,8 @@ jobs:
   on-dispatch:
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'workflow_dispatch' }}
+    steps:
+      - run: echo Dispatching
     outputs:
       is_dispatch: 'true'
 
