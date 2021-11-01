@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  baseUrl: 'http://localhost:1668',
+  baseUrl: 'https://angular100days.netlify.app',
 };
